@@ -6,5 +6,5 @@ client:
   city: Washinton,DC
 
 properties:
-  env: default
+  env: test
 
