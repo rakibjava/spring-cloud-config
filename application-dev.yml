@@ -1,5 +1,4 @@
 person:
-  name:Joe Biden
+  name: Joe Biden
   email: joebiden@gmail.com
-  propertiesEnv: dev
-
+  propertiesenv: dev
