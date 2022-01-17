@@ -1,4 +1,3 @@
 person:
-  name: Joe Biden
-  email: joebiden@gmail.com
-  propertiesenv: dev
+  name: firstname lastname
+  email: defaultenv@gmail.com
