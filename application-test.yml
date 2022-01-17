@@ -1,10 +1,5 @@
-client:
-  firstName:Joe
-  lastanme: Biden
-  age: 80
-  address: USA
-  city: Washinton,DC
-
-properties:
-  env: test
+person:
+  name:Joe Biden
+  email: joebiden@gmail.com
+  propertiesEnv: dev
 
