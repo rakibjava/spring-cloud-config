@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: spring-config-client
+  config:
+    import: optional:configserver:http://localhost:9999
+  profiles:
+    active: dev
+
+
+server:
+  port: 9190
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh

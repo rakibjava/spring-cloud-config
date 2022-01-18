@@ -1,0 +1,43 @@
+server:
+  port: 9999
+
+# using local machine git
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///Users/mohammadhasan/IdeaProjects/config-prop-repo # here config-prop-repo is the local git location
+          default-label: config-repo # here config-repo is the branch name if the branch name is main or master no need to mention this
+  application:
+    name: spring-cloud-config-server
+
+# using remote github repo
+#spring:
+#  cloud:
+#      config:
+#        server:
+#          git:
+#            uri: https://github.com/{username}}/{githubrepo}.git
+#            username: { username }
+#            password: { password }
+#            default-label: { branch name }
+#            force-pull: true
+#  application:
+#    name: spring-cloud-config-server
+
+
+# using without github through local file system or classpath location. Important point here profile should set native
+#spring:
+#  application:
+#    name: spring-cloud-config-server
+#  profiles:
+#    active: native
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          # search-locations: classpath:localdevprop/
+#          # search-locations: file:////Users/mohammadhasan/Documents/localdevprop
+#          search-locations: file:///Users/mohammadhasan/Documents/localdevprop
+
