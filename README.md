@@ -79,8 +79,19 @@ Sample config file is located under classpath:localdevprop folder as follows:
         person:
             name: firstnamr lastname
             email: test@gmail.com
+
+#Convention of configfile name: 
+        The Config Service serves property sources from /{application}/{profile}/{label},where the default bindings in the client app are as follows:
+        For example: microservice1-dev.yml
         
-Convention of configfile name: usually config file name
+        microservice1= "application" = ${spring.application.name}
+        dev= "profile" = ${spring.profiles.active} (actually Environment.getActiveProfiles())
+        "label" = "master"
+    
+        
+        but if we do not create the properties file based on  client application name then simply create properties file with
+        1. application.yml/properties which serves as default profile to all client which connected config service
+        2. application-{profile}.yml/properties which serves the  profile set by client application which connected config service
 
 # **spring-cloud-config-client-configuration**
 
@@ -127,7 +138,7 @@ To extract the properties value there are multiple ways:
         private String name;
         @value("${person.name}")
         private String email;
-      
-But important point here is @value anotation will not refresh the updated value from config server if any value change for this 
-@RefreshSchope annotation will need to use in the class where @value use but if @vlaue use to get system properties 
-using spring spel @Value ( "#{'${limit.service.maximum}'}" ) then no need @RefreshSchope
+        
+        But important point here is @value anotation will not refresh the updated value from config server if any value change for this 
+        @RefreshSchope annotation will need to use in the class where @value use but if @vlaue use to get system properties 
+        using spring spel @Value ( "#{'${limit.service.maximum}'}" ) then no need @RefreshSchope
